@@ -43,6 +43,7 @@ FRunner class >> runExample [
 	self
 		printCollection: origin
 		withTitle: '--- The origin collection of figures'.
+	"copy := origin collect: [ :fig | fig copy ]."
 	copy := origin deepCopy.
 	copy do: [ :fig | fig scalingBy: 2.0 ].
 	self
