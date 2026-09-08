@@ -22,8 +22,14 @@ FRectangle class >> newWithLength: a andWidth: b [
 
 { #category : 'calculating' }
 FRectangle >> area [
-
+	"FRectangle new area >>> 12."
+	"(FRectangle newWithLength: 1 andWidth: 1) area >>> 1"
 	^ length * width
+]
+
+{ #category : 'accessing' }
+FRectangle >> diagonal [
+	^(self length squared + self width squared) sqrt
 ]
 
 { #category : 'accessing' }
@@ -60,6 +66,11 @@ FRectangle >> printOn: aStream [
 		nextPut: $x;
 		print: width;
 		nextPut: $]
+]
+
+{ #category : 'accessing' }
+FRectangle >> radius [
+	^self diagonal / 2
 ]
 
 { #category : 'accessing' }
